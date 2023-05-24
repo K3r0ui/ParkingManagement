@@ -23,6 +23,7 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::post('/user', [App\Http\Controllers\UserController::class, 'store']);
     // Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
     Route::resource('/user', App\Http\Controllers\UserController::class);
     Route::resource('/customers', App\Http\Controllers\CustomerController::class);

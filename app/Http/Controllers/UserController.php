@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreAdminRequest;
 
 class UserController extends Controller
 {
@@ -20,11 +21,18 @@ class UserController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request)
+    // {
+    //     //
+    // }
 
+
+    public function store(StoreAdminRequest $request)
+    {
+        User::updateOrCreate(['id' => $request->user_id , 'password' => Hash::make($request->password)], $request->except('user_id','password'));
+
+        return  redirect()->back()->with('success', 'category Created Successfully!!');
+    }
     /**
      * Display the specified resource.
      *

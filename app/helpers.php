@@ -7,20 +7,21 @@ if (!function_exists('makeAvatar')) {
 
     function makeAvatar($fontPath, $dest, $char)
     {
-        $path = $dest;
-        $image = imagecreate(200, 200);
-        $red = rand(0, 255);
-        $green = rand(0, 255);
-        $blue = rand(0, 255);
-        imagecolorallocate($image, $red, $green, $blue);
-        $textcolor = imagecolorallocate($image, 255, 255, 255);
+        // $path = $dest;
+        // $image = imagecreatetruecolor(200, 200);
+        // $red = rand(0, 255);
+        // $green = rand(0, 255);
+        // $blue = rand(0, 255);
+        // imagecolorallocate($image, $red, $green, $blue);
+        // $textcolor = imagecolorallocate($image, 255, 255, 255);
 
-        // Add some shadow to the text
-        imagettftext($image, 110, 0, 51, 151, $textcolor, $fontPath, $char);
-        // Add the text
-        imagettftext($image, 105, 0, 50, 150, $textcolor, $fontPath, $char);
-        imagepng($image, $path);
-        imagedestroy($image);
+        // // Add some shadow to the text
+        // imagettftext($image, 110, 0, 51, 151, $textcolor, $fontPath, $char);
+        // // Add the text
+        // imagettftext($image, 105, 0, 50, 150, $textcolor, $fontPath, $char);
+        // imagepng($image, $path);
+        // imagedestroy($image);
+        $path = 'users/avatars/179321640528711_avatar.png';
         return $path;
     }
 }
@@ -33,7 +34,7 @@ function createUserAvatar($request)
     $newAvatarName = rand(12, 34353) . time() . '_avatar.png';
     $dest = $path . $newAvatarName;
 
-    $createAvatar = makeAvatar($fontPath, $dest, $char);
+    $createAvatar = 'users/avatars/179321640528711_avatar.png';
     $picture = $createAvatar == true ? $newAvatarName : '';
 
     return $picture;
