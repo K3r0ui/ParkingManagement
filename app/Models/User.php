@@ -55,9 +55,9 @@ class User extends Authenticatable
             $newAvatarName = rand(12,34353).time().'_avatar.png';
             $dest = $path.$newAvatarName;
 
-            $createAvatar = makeAvatar($fontPath,$dest,$char);
-            $picture = $createAvatar == true ? $newAvatarName : '';
-
+            $createAvatar = 'users/avatars/avatar1.png.png';
+            $picture = $createAvatar ;
+            
             $model->avatar = $picture;
         });
     }

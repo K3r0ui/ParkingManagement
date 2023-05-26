@@ -21,21 +21,16 @@ if (!function_exists('makeAvatar')) {
         // imagettftext($image, 105, 0, 50, 150, $textcolor, $fontPath, $char);
         // imagepng($image, $path);
         // imagedestroy($image);
-        $path = 'users/avatars/179321640528711_avatar.png';
+        $path = 'users/avatars/avatar1.png';
         return $path;
     }
 }
 
 function createUserAvatar($request)
 {
-    $path = 'users/avatars/';
-    $fontPath = public_path('fonts/Oliciy.ttf');
-    $char = strtoupper($request->name[0]);
-    $newAvatarName = rand(12, 34353) . time() . '_avatar.png';
-    $dest = $path . $newAvatarName;
 
-    $createAvatar = 'users/avatars/179321640528711_avatar.png';
-    $picture = $createAvatar == true ? $newAvatarName : '';
+    $createAvatar = 'users/avatars/avatar1.png.png';
+    $picture = $createAvatar;
 
     return $picture;
 }
