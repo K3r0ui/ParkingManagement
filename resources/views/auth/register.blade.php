@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sign Up | JSS Parking System - Admin Template</title>
+        <title>Sign Up</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,12 +36,13 @@
                             <div class="logo-centered">
                                 <a href="../index.html"><img src="../src/img/brand.svg" alt=""></a>
                             </div>
-                            <h3>New to JSS Parking System</h3>
+                            <h3>New to our Parking System</h3>
                             <p>Join us today! It takes only few steps</p>
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Please write your name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -51,7 +52,7 @@
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Please write your email" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +62,7 @@
                                     <i class="ik ik-mail"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Please write your desired password" name="password" required autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -71,7 +72,7 @@
                                     <i class="ik ik-lock"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="form-control" placeholder="repeat your desired password" name="password_confirmation" required autocomplete="new-password">
                                     <i class="ik ik-eye-off"></i>
                                 </div>
                                 {{-- <div class="row">

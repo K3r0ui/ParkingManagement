@@ -156,8 +156,8 @@
 
                 <footer class="footer">
                     <div class="w-100 clearfix">
-                        <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 JSS Parking System v2.0. All Rights Reserved.</span>
-                        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i class="fa fa-heart text-danger"></i> by <a href="https://jambasangsang.com/" class="text-dark" target="_blank">Jambasangsang</a></span>
+                        <span class="text-center text-sm-left d-md-inline-block">2023 PFE ISAMM</span>
+                        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Developped by <i class="fa fa-heart text-danger"></i> by <a href="https://www.facebook.com/wassim.azaiez?mibextid=LQQJ4d" class="text-dark" target="_blank">wassim azaiez</a></span>
                     </div>
                 </footer>
 

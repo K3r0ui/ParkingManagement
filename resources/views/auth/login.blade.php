@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sign Up | JSS Parking System - Admin Template</title>
+    <title>Sign Up</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
         <div class="container-fluid h-100">
             <div class="row flex-row h-100 bg-white">
                 <div class="col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none">
-                    <div class="lavalite-bg" style="background-image: url('img/parking_login.png')">
+                    <div class="lavalite-bg" style="background-image: url('img/register.jpg')">
                         <div class="lavalite-overlay"></div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <div class="logo-centered">
                             <a href="../index.html"><img src="../src/img/brand.svg" alt=""></a>
                         </div>
-                        <h3>Sign In to JSS Parking System</h3>
+                        <h3>Sign In</h3>
                         <p>Happy to see you again!</p>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
