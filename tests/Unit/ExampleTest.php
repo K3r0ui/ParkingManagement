@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
     public function test_Integeration_Test()
     {
         $response = $this->post('/login', [
-            'email' => 'aminkaroui@gmail.com',
+            'email' => 'sassoumi88@gmail.com',
             'password' => '12345678'
         ]);
         
@@ -32,7 +32,7 @@ class ExampleTest extends TestCase
     {
  
         $this->assertDatabaseHas('users', [
-            'email' => 'aminkaroui@gmail.com'
+            'email' => 'sassoumi88@gmail.com'
         ]);
     }
 }

@@ -27,7 +27,7 @@ class VehicleController extends Controller
     public function store(StoreVehicleRequest $request)
     {
       try {
-        Vehicle::updateOrCreate(['id' => $request->vehicle_id], $request->except('vehicle_id', 'status') + ['status' => 0]);
+        Vehicle::updateOrCreate(['id' => $request->vehicle_id], $request->except('vehicle_id', 'status') + ['status' => $request->status]);
         return redirect()->route('vehicles.index')->with('success',  $request->vehicle_id ? 'Vehicle Updated Successfully!!' : 'Vehicle Created Successfully!!');
       } catch (\Throwable $th) {
         return redirect()->route('vehicles.create')->with('error', 'Vehicle Cannot be Create please check the inputs!!');

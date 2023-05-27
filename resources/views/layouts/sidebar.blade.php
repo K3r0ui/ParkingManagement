@@ -33,7 +33,7 @@
                         <a href="{{ route('customers.index') }}" class="menu-item  {{ request()->routeIs('customers.index') ? 'active' : '' }}">List</a>
                     </div>
                 </div>
-                <div class="nav-lavel">UI Element</div>
+                <div class="nav-lavel">Vehicle Section</div>
                 <div class="nav-item has-sub {{ request()->routeIs('categories*')  ? 'open' : ''}}">
                     <a href="#"><i class="ik ik-box"></i><span>Manage Category</span></a>
                     <div class="submenu-content">
