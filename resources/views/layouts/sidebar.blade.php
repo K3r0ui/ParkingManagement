@@ -5,7 +5,7 @@
                 Parking System
                {{-- <img width="40" height="40" src="{{ asset('img/logo.png') }}" class="header-brand-img" alt="lavalite"> --}}
             </div>
-            <span class="text">&nbsp;By Wassim</span>
+            <span class="text">&nbsp;</span>
         </a>
         <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
         <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>

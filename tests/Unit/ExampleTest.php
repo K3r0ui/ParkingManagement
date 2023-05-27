@@ -1,8 +1,9 @@
 <?php
 
-namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
@@ -11,8 +12,27 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_Integeration_Test()
     {
-        $this->assertTrue(true);
+        $response = $this->post('/login', [
+            'email' => 'aminkaroui@gmail.com',
+            'password' => '12345678'
+        ]);
+ 
+        $this->assertAuthenticated();
+        $response->assertRedirect(RouteServiceProvider::HOME);
+    }
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_Database()
+    {
+ 
+        $this->assertDatabaseHas('users', [
+            'email' => 'aminkaroui@gmail.com'
+        ]);
     }
 }
