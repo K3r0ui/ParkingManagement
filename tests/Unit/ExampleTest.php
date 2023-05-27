@@ -18,7 +18,7 @@ class ExampleTest extends TestCase
             'email' => 'aminkaroui@gmail.com',
             'password' => '12345678'
         ]);
- 
+        
         $this->assertAuthenticated();
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
