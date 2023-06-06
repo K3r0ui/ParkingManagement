@@ -11,7 +11,7 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('admins.index', ['users' => User::get()]);
+        return view('customers.index', ['users' =>User::where('role', 'ROLE_ADMIN')->get(['id','name', 'email', 'created_at'])]);
 
     }
 
@@ -21,18 +21,13 @@ class UserController extends Controller
     }
 
 
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-
     public function store(StoreAdminRequest $request)
     {
-        User::updateOrCreate(['id' => $request->user_id , 'password' => Hash::make($request->password)], $request->except('user_id','password'));
+        User::updateOrCreate(['id' => $request->user_id , 'password' => Hash::make($request->password),'role' => 'ROLE_ADMIN'], $request->except('user_id','password'));
 
-        return  redirect()->back()->with('success', 'category Created Successfully!!');
+        return  redirect()->back()->with('success', 'Administrator Added Successfully!!');
     }
+
     /**
      * Display the specified resource.
      *

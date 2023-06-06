@@ -7,7 +7,7 @@
             <div class="page-header-title">
                 <i class="ik ik-inbox bg-blue"></i>
                 <div class="d-inline">
-                    <h5>Customers List</h5>
+                    <h5>Client/Users List</h5>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            {{-- <div class="card-header"><h3>Customers List</h3></div> --}}
+            {{-- <div class="card-header"><h3>Client/Users List</h3></div> --}}
             <div class="card-body">
               @include('customers.table')
             </div>

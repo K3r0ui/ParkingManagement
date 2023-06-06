@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
-
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreAdminRequest;
 class CustomerController extends Controller
 {
 
     public function index()
     {
-        return view('customers.index', ['customers' => Customer::all()]);
+        $userAuth = auth()->user();
+        return view('customers.index', ['users' =>User::where('role', 'ROLE_USER')->get(['id','name', 'email', 'created_at'])],compact('userAuth'));
     }
 
     public function create()
@@ -19,21 +23,21 @@ class CustomerController extends Controller
         return view('customers.create');
     }
 
-    public function store(StoreCustomerRequest $request)
+    public function store(StoreAdminRequest $request)
     {
-        Customer::updateOrCreate(['id' => $request->customer_id], $request->except('customer_id'));
+        User::updateOrCreate(['id' => $request->user_id , 'password' => Hash::make($request->password),'role' => 'ROLE_USER'], $request->except('user_id','password'));
 
-        return redirect()->route('customers.index')->with('success', 'Customer Created Successfully!!');
+        return  redirect()->back()->with('success', 'Client Added Successfully!!');
     }
 
 
-    public function edit(Customer $customer)
+    public function edit(User $user)
     {
-        return view('customers.edit', compact('customer'));
+        return view('customers.edit', compact('user'));
     }
 
 
-    public function destroy(Customer $customer)
+    public function destroy(User $customer)
     {
         $customer->delete();
         return redirect()->route('customers.index')->with('success', 'Customer Deleted Successfully!!');

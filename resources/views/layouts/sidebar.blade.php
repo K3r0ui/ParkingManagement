@@ -10,7 +10,7 @@
         <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
         <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
     </div>
-
+    
     <div class="sidebar-content">
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
@@ -18,7 +18,7 @@
                 <div class="nav-item active">
                     <a href="{{ route('home') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                 </div>
-
+                @if(Auth::user()->role == 'ROLE_ADMIN')
                 <div class="nav-item has-sub {{ request()->routeIs('user*')  ? 'open' : ''}}">
                     <a href="javascript:void(0)"><i class="ik ik-user"></i><span>Manage Admins </span> </a>
                     <div class="submenu-content">
@@ -26,6 +26,8 @@
                         <a href="{{ route('user.index') }}" class="menu-item  {{ request()->routeIs('user.index') ? 'active' : '' }}">List</a>
                     </div>
                 </div>
+                @endif
+                @if(Auth::user()->role == 'ROLE_ADMIN')
                 <div class="nav-item has-sub {{ request()->routeIs('customers*')  ? 'open' : ''}}">
                     <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Manage Customers </span> </a>
                     <div class="submenu-content">
@@ -33,7 +35,9 @@
                         <a href="{{ route('customers.index') }}" class="menu-item  {{ request()->routeIs('customers.index') ? 'active' : '' }}">List</a>
                     </div>
                 </div>
+                @endif
                 <div class="nav-lavel">UI Element</div>
+                @if(Auth::user()->role == 'ROLE_ADMIN')
                 <div class="nav-item has-sub {{ request()->routeIs('categories*')  ? 'open' : ''}}">
                     <a href="#"><i class="ik ik-box"></i><span>Manage Category</span></a>
                     <div class="submenu-content">
@@ -41,6 +45,8 @@
                         <a href="{{ route('categories.index') }}" class="menu-item  {{ request()->routeIs('categories.index') ? 'active' : '' }}">List</a>
                     </div>
                 </div>
+                @endif
+
                 <div class="nav-item has-sub {{ request()->routeIs('vehicles*')  ? 'open' : ''}}">
                     <a href="#"><i class="ik ik-truck"></i><span>Register Vehicles</span> </a>
                     <div class="submenu-content">
@@ -48,7 +54,7 @@
                         <a href="{{ route('vehicles.index') }}" class="menu-item  {{ request()->routeIs('vehicles.index') ? 'active' : '' }}">List</a>
                     </div>
                 </div>
-
+                @if(Auth::user()->role == 'ROLE_ADMIN')
                 <div class="nav-item has-sub {{ request()->routeIs('vehiclesIn*') || request()->routeIs('vehiclesOut*')  ? 'open' : ''}}">
                     <a href="#"><i class="ik ik-gitlab"></i><span>Manage Vehicles</span> </a>
                     <div class="submenu-content">
@@ -56,7 +62,8 @@
                         <a href="{{ route('vehiclesOut.index') }}" class="menu-item  {{ request()->routeIs('vehiclesOut*') ? 'active' : '' }}">Out Vehicle</a>
                     </div>
                 </div>
-
+                @endif
+                @if(Auth::user()->role == 'ROLE_ADMIN')
                 <div class="nav-lavel">Reports Section</div>
                 <div class="nav-item has-sub">
                     <a href="{{ route('reports.index') }}"><i class="ik ik-edit"></i><span>Report</span></a>
@@ -66,6 +73,7 @@
                         <a href="pages/form-advance.html" class="menu-item">Advance</a>
                     </div> --}}
                 </div>
+                @endif
             </nav>
         </div>
     </div>
