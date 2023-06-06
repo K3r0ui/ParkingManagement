@@ -19,7 +19,7 @@ class CreateVehicleInsTable extends Migration
             $table->string('parking_area')->nullable();
             $table->string('parking_number')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
